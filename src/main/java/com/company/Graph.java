@@ -41,9 +41,7 @@ public class Graph {
         Iterator ite = adjLists[vertex].listIterator();
         while (ite.hasNext()) {
             int adj = (int) ite.next();
-            if (adj < 0) {
-                throw new ArrayIndexOutOfBoundsException();
-            } else if (adj > adjLists.length-1) {
+            if (adj < 0 || adj > adjLists.length - 1) {
                 throw new ArrayIndexOutOfBoundsException();
             }
             if (!visited[adj])
